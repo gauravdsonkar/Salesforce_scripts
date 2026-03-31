@@ -2,5 +2,11 @@
 
 *** Settings ***
 Documentation    All libraries which are required throughout the script
-Library     QForce
-Library     QWeb
+Library          QForce
+Library          QWeb
+Library          String
+
+*** Variables ***
+{BROWSER}        chrome
+${sfdc_url}      https://login.salesforce.com
+${sfdc_home_url} ${sfdc_url}/lightning/page/home
