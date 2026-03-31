@@ -1,1 +1,1 @@
-#This file will have all the test cases which will make required calls to Resources.robti file
+#This file will have all the test cases which will make required calls to Resources.robot file
