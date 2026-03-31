@@ -17,5 +17,9 @@ ${sfdc_home_url}    ${sfdc_url}/lightning/page/home
 *** Test Cases ***
 Open Browser for testing
     Documentation    this test case opens browser for testing
-    Open Browser    about:${sfdc_url}    ${BROWSER}
-    SetConfig       defaultTimeout       30s
+    Open Browser    ${sfdc_url}    ${BROWSER}
+    SetConfig       DefaultTimeout       30s
+    
+
+Close browser
+    Close All Browsers  
