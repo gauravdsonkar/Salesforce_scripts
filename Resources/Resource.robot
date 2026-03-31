@@ -24,7 +24,7 @@ Open Browser for testing
 Close browser
     Close All Browsers  
     
-Login to system    
+Login     
     [Documentation]       Login to Salesforce instance by providing username and password
     [Arguments]           ${sf_instance_url}=${sfdc_home_url}    ${sf_username}=${username}   ${sf_password}=${password}  
     GoTo                  ${sf_instance_url}
