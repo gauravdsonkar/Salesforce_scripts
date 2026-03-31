@@ -7,7 +7,7 @@ Library             QWeb
 Library             String
 
 *** Variables ***
-${BROWSER}           chrome
+${BROWSER}          chrome
 ${sfdc_url}         https://login.salesforce.com
 ${sfdc_home_url}    ${sfdc_url}/lightning/page/home
 
@@ -16,8 +16,9 @@ ${sfdc_home_url}    ${sfdc_url}/lightning/page/home
 
 *** Test Cases ***
 Open Browser for testing
+    Set Library Search Order                          QForce    QWeb
     Documentation    this test case opens browser for testing
-    OpenBrowser    ${sfdc_url}    ${BROWSER}
+    Open Browser    ${sfdc_url}    ${BROWSER}
     SetConfig       DefaultTimeout       30s 
     
 
