@@ -3,3 +3,4 @@
 *** Settings ***
 Resource    ../Resources/Resource.robot
 Suite Setup    Open Browser For testing
+Suite Teardown    Close browser
