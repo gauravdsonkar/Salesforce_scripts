@@ -2,5 +2,4 @@
 
 *** Settings ***
 Resource    ../Resources/Resource.robot
-Library        QForce
-Library        QWeb
+Suite Setup    Open Browser For testing
