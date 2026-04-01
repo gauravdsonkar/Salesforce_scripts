@@ -17,16 +17,19 @@ ${secret}                       ABFGP3RIPT4KWE7CNMKVF7GOXAX6RWUT
 
 
 *** Keywords *** 
-Open Browser for testing
-    Set Library Search Order    QForce                      QWeb
-    [Documentation]             this test case opens browser for testing
-    Open Browser                about:blank                 ${BROWSER}
-    SetConfig                   DefaultTimeout              30s
+Setup Browser
+    # Setting search order is not really needed here, but given as an example 
+    # if you need to use multiple libraries containing keywords with duplicate names
+    Set Library Search Order                          QForce    QWeb
+    Open Browser          about:blank                 ${BROWSER}
+    SetConfig             LineBreak                   ${EMPTY}               #\ue000
+    Evaluate              random.seed()               random                 # initialize random generator
+    SetConfig             DefaultTimeout              45s                    #sometimes salesforce is slow
+    # adds a delay of 0.3 between keywords. This is helpful in cloud with limited resources.
+    SetConfig             Delay                       0.3
 
-
-Close browser
+End suite
     Close All Browsers
-
 Login     
     [Documentation]             Login to Salesforce instance by providing username and password
     [Arguments]                 ${sf_instance_url}=${sfdc_home_url}                     ${sf_username}=${username}                 ${sf_password}=${password}
