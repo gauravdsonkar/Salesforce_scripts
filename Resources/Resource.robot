@@ -16,7 +16,8 @@ ${secret}                       ABFGP3RIPT4KWE7CNMKVF7GOXAX6RWUT
 
 
 
-*** Keywords *** Setup Browser
+*** Keywords *** 
+Setup Browser
     # Setting search order is not really needed here, but given as an example
     # if you need to use multiple libraries containing keywords with duplicate names
     Set Library Search Order    QForce                      QWeb
