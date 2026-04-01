@@ -20,7 +20,6 @@ Open Browser for testing
     Set Library Search Order                          QForce    QWeb
     [Documentation]    this test case opens browser for testing
     Open Browser    about:blank    ${BROWSER}
-    GoTo            ${sfdc_url}
     SetConfig       DefaultTimeout       30s 
     
 
