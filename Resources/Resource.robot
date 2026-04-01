@@ -21,7 +21,7 @@ Setup Browser
     # Setting search order is not really needed here, but given as an example
     # if you need to use multiple libraries containing keywords with duplicate names
     Set Library Search Order    QForce                      QWeb
-    Open Browser                about:blank                 ${BROWSER}
+    OpenBrowser                about:blank                 ${BROWSER}
     SetConfig                   LineBreak                   ${EMPTY}                    #\ue000
     Evaluate                    random.seed()               random                      # initialize random generator
     SetConfig                   DefaultTimeout              45s                         #sometimes salesforce is slow
