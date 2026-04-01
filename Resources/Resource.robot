@@ -14,10 +14,10 @@ ${sfdc_home_url}    ${sfdc_url}/lightning/page/home
 
 
 
-*** Test Cases ***
+*** Keywords *** 
 Open Browser for testing
     Set Library Search Order                          QForce    QWeb
-    Documentation    this test case opens browser for testing
+    [Documentation]    this test case opens browser for testing
     Open Browser    ${sfdc_url}    ${BROWSER}
     SetConfig       DefaultTimeout       30s 
     
@@ -49,7 +49,7 @@ Fill MFA
 
 Home
     [Documentation]       Example appstarte: Navigate to homepage, login if needed
-    GoTo                  ${home_url}
+    GoTo                  ${sfdc_home_url}
     ${login_status} =     IsText                      To access this page, you have to log in to Salesforce.    2
     Run Keyword If        ${login_status}             Login
     ClickText             Home
