@@ -68,6 +68,7 @@ Fill MFA
     [Arguments]                 ${sf_username}=${username}                              ${mfa_secret}=${secret}     ${sf_instance_url}=${login_url}
     ${mfa_code}=                GetOTP                      ${sf_username}              ${mfa_secret}               ${login_url}
     TypeSecret                  Verification Code           ${mfa_code}
+    SetConfig                   Delay                       2.3
     ClickText                   Verify
 
 
