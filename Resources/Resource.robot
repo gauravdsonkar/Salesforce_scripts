@@ -18,7 +18,7 @@ ${sfdc_home_url}    ${sfdc_url}/lightning/page/home
 Open Browser for testing
     Set Library Search Order                          QForce    QWeb
     [Documentation]    this test case opens browser for testing
-    Open Browser    ${sfdc_url}    ${BROWSER}
+    Open Browser    about:blank    ${BROWSER}
     SetConfig       DefaultTimeout       30s 
     
 
