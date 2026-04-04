@@ -81,7 +81,7 @@ Home
     ClickText                   Home
     VerifyTitle                 Home | Salesforce
 
-Open Required Application
+Open Sales Application
     [Documentation]             This is a script which is used for Opening Salesforce Application
     [Arguments]                 ${App_Name}
     GoTo                        ${login_url}
@@ -95,7 +95,6 @@ Open Required Application
     #TypeText                   Search apps and items...    Sales
     #Click Element              xpath=//b[text()='Sales']                               partial_match=false
     #SetConfig                  SearchDirection             down
-    LaunchApp                   ${App_Name}
     VerifyText                  ${App_Name}                 10s
     
 
