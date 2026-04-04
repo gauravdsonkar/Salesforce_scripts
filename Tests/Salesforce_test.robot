@@ -1,7 +1,7 @@
 #This file will have all the test cases which will make required calls to Resource.robot file
 
 *** Settings ***
-Resource                        common.robot
+Resource                        ../Resources/common.robot
 Suite Setup                     Setup Browser
 Suite Teardown                  End suite
 
