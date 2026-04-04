@@ -21,6 +21,7 @@ Create Lead via Sales Application
     ClickText                        Save                        partial_match=false
     VerifyText                       We hit a snag.
     VerifyText                       Name                        anchor=We hit a snag.
+    VerifyText                       Company                        anchor=We hit a snag.
     UseModal                  Off
 
 
