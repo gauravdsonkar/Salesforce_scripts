@@ -40,7 +40,8 @@ Create Lead via Sales Application
     Picklist                    Lead Source                 Web
     ClickText                   Save                        partial_match=False
     UseModal                    Off
-    VerifyTitle                 
+    ${title_of_page}=           Get Title  
+    Should Match Regexp         ${title_of_page}            ^Gaurav Sonkar
 
 
 
