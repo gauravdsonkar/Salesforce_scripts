@@ -11,7 +11,7 @@ Library                         DateTime
 ${BROWSER}                      chrome
 ${login_url}                    https://login.salesforce.com
 ${home_url}                     ${login_url}/lightning/page/home
-${secret}                       ABFGP3RIPT4KWE7CNMKVF7GOXAX6RWUT
+${secret}                       QVANSQW2EA4ZVOAGNLWKKFNHHM27LUT3
 
 
 
