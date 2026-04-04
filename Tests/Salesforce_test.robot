@@ -1,7 +1,7 @@
 #This file will have all the test cases which will make required calls to Resource.robot file
 
 *** Settings ***
-Resource                        ../Resources/Resource.robot
+Resource                        ../Resources/common.robot
 Suite Setup                     Setup Browser
 Suite Teardown                  End suite
 
@@ -10,7 +10,7 @@ Suite Teardown                  End suite
 Create Lead via Sales Application
     [Documentation]             Create a Lead using Sales App
     [Tags]                      Lead_creation
-    Open Required Application   Sales
+    Open Required Application    Sales
 
 Entering A Lead
     [tags]                      Lead
