@@ -15,6 +15,10 @@ Create Lead via Sales Application
     ClickText                 New       partial_match=false
     UseModal                  On
     VerifyText                Lead Information
+    VerifyText                Lead Owner
+    ${lead_owner_name}        GetFieldValue    Lead Owner
+    UseModal                  Off
+
 
 
 
