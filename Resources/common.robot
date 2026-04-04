@@ -17,22 +17,6 @@ ${secret}                       ABFGP3RIPT4KWE7CNMKVF7GOXAX6RWUT
 
 
 *** Keywords *** 
-Open Required Application
-    [Documentation]        This is a script which is used for Opening Salesforce Application
-    [Arguments]            ${App_Name}
-    GoTo                   ${login_url}
-    TypeText               Username     ${username}  delay=1s
-    TypeText               Password     ${password}  delay=1s
-    ClickText              Log In
-    VerifyTitle            Home | Salesforce          20s
-    #ClickElement           /html/body/div[4]/div[1]/section/div[2]/div[1]/one-appnav/div/div/div/div/one-app-launcher-header/button           10s
-    #TypeText               Search apps and items...  Sales
-    #Click Element          xpath=//b[text()='Sales']  partial_match=false
-    #SetConfig              SearchDirection           down
-    LaunchApp              ${App_Name}
-    VerifyText             ${App_Name}
-    ClickElement           //span[text()/='Sales']                        10s
-    #VerifyText             Sales    anchor=App Launcher    partial_match=false
 
 Setup Browser
     # Setting search order is not really needed here, but given as an example
@@ -48,8 +32,6 @@ Setup Browser
 End suite
     Close All Browsers
 
-
-*** Comments ***
 Login
     [Documentation]             Login to Salesforce instance. Takes instance_url, username and password as
     ...                         arguments. Uses values given in Copado Robotic Testing's variables section by default.
@@ -99,5 +81,21 @@ Home
     ClickText                   Home
     VerifyTitle                 Home | Salesforce
 
+Open Required Application
+    [Documentation]        This is a script which is used for Opening Salesforce Application
+    [Arguments]            ${App_Name}
+    GoTo                   ${login_url}
+    TypeText               Username     ${username}  delay=1s
+    TypeText               Password     ${password}  delay=1s
+    ClickText              Log In
+    VerifyTitle            Home | Salesforce          20s
+    #ClickElement           /html/body/div[4]/div[1]/section/div[2]/div[1]/one-appnav/div/div/div/div/one-app-launcher-header/button           10s
+    #TypeText               Search apps and items...  Sales
+    #Click Element          xpath=//b[text()='Sales']  partial_match=false
+    #SetConfig              SearchDirection           down
+    LaunchApp              ${App_Name}
+    VerifyText             ${App_Name}
+    ClickElement           //span[text()/='Sales']                        10s
+    #VerifyText             Sales    anchor=App Launcher    partial_match=false
 
 
