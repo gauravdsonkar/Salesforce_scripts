@@ -97,7 +97,6 @@ Open Required Application
     #SetConfig                  SearchDirection             down
     LaunchApp                   ${App_Name}
     VerifyText                  ${App_Name}                 10s
-    #ClickElement                //span[text()/='Sales']     10s
-    #VerifyText                 Sales                       anchor=App Launcher         partial_match=false
+    
 
 
