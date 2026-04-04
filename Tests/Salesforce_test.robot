@@ -34,15 +34,13 @@ Create Lead via Sales Application
     TypeText                    Company                     Company at ${curr_time}                    Last Name
     TypeText                    Title                       Manager                     Address Information
     ${rand_email}               Generate Random String      5                        chars=GauravSonkar
-    TypeText                    Email                       @gmail.com        Rating
+    TypeText                    Email                       ${rand_email}@gmail.com        Rating
     TypeText                    Website                     https://www.growmore.com/
 
     Picklist                    Lead Source                 Web
     ClickText                   Save                        partial_match=False
-
-
-
     UseModal                    Off
+    VerifyTitle                 
 
 
 
