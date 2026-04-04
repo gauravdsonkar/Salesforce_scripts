@@ -23,8 +23,9 @@ Create Lead via Sales Application
     VerifyText                  Name                        anchor=We hit a snag.
     VerifyText                  Company                     anchor=We hit a snag.
     Picklist                    Salutation                  Mr.
+    ${curr_time}                Get Time
     TypeText                    First Name                  Gaurav
-    TypeText                    Last Name                   Sonkar_
+    TypeText                    Last Name                   Sonkar_${curr_time}
     Picklist                    Lead Status                 Open - Not Contacted
     # generate random phone number, just as an example
     # NOTE: initialization of random number generator is done on suite setup
