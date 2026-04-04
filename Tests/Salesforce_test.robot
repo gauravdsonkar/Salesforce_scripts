@@ -28,14 +28,13 @@ Create Lead via Sales Application
     TypeText                    Last Name                   Sonkar_${curr_time}
     Picklist                    Lead Status                 Open - Not Contacted
     # generate random phone number, just as an example
-    # NOTE: initialization of random number generator is done on suite setup
-    ${rand_phone}=              Generate Random String      14                          [NUMBERS]
-    # concatenate leading "+" and random numbers
-    ${phone}=                   SetVariable                 +${rand_phone}
-    TypeText                    Phone                       ${phone}                    First Name
-    TypeText                    Company                     Growmore                    Last Name
+    ${rand_phone}=              Generate Random String      10                          [NUMBERS]
+    ${phone}=                   SetVariable                 +91${rand_phone}
+    TypeText                    Phone                       ${phone}                    anchor=First Name
+    TypeText                    Company                     Company at ${curr_time}                    Last Name
     TypeText                    Title                       Manager                     Address Information
-    TypeText                    Email                       tina.smith@gmail.com        Rating
+    ${rand_email}               Generate Random String      5                        chars=GauravSonkar
+    TypeText                    Email                       @gmail.com        Rating
     TypeText                    Website                     https://www.growmore.com/
 
     Picklist                    Lead Source                 Web
