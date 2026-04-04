@@ -10,19 +10,39 @@ Suite Teardown                  End suite
 Create Lead via Sales Application
     [Documentation]             Create a Lead using Sales App
     [Tags]                      Lead_creation
-    Open Sales Application    Sales
-    ClickText                 Leads     partial_match=false
-    ClickText                 New       partial_match=false
-    UseModal                  On
-    VerifyText                Lead Information
-    VerifyText                Lead Owner
-    ${lead_owner_name}        GetFieldValue    Lead Owner
-    Should Be Equal As Strings                 ${lead_owner_name}    Gaurav Sonkar
-    ClickText                        Save                        partial_match=false
-    VerifyText                       We hit a snag.
-    VerifyText                       Name                        anchor=We hit a snag.
-    VerifyText                       Company                        anchor=We hit a snag.
-    UseModal                  Off
+    Open Sales Application      Sales
+    ClickText                   Leads                       partial_match=false
+    ClickText                   New                         partial_match=false
+    UseModal                    On
+    VerifyText                  Lead Information
+    VerifyText                  Lead Owner
+    ${lead_owner_name}          GetFieldValue               Lead Owner
+    Should Be Equal As Strings                              ${lead_owner_name}          Gaurav Sonkar
+    ClickText                   Save                        partial_match=false
+    VerifyText                  We hit a snag.
+    VerifyText                  Name                        anchor=We hit a snag.
+    VerifyText                  Company                     anchor=We hit a snag.
+    Picklist                    Salutation                  Mr.
+    TypeText                    First Name                  Gaurav
+    TypeText                    Last Name                   Sonkar_
+    Picklist                    Lead Status                 Open - Not Contacted
+    # generate random phone number, just as an example
+    # NOTE: initialization of random number generator is done on suite setup
+    ${rand_phone}=              Generate Random String      14                          [NUMBERS]
+    # concatenate leading "+" and random numbers
+    ${phone}=                   SetVariable                 +${rand_phone}
+    TypeText                    Phone                       ${phone}                    First Name
+    TypeText                    Company                     Growmore                    Last Name
+    TypeText                    Title                       Manager                     Address Information
+    TypeText                    Email                       tina.smith@gmail.com        Rating
+    TypeText                    Website                     https://www.growmore.com/
+
+    Picklist                    Lead Source                 Web
+    ClickText                   Save                        partial_match=False
+
+
+
+    UseModal                    Off
 
 
 
