@@ -10,6 +10,7 @@ Suite Teardown                  End suite
 Create Lead via Sales Application
     [Documentation]             Create a Lead using Sales App
     [Tags]                      Lead_creation
+
     Open Required Application    Sales
 
 Entering A Lead
