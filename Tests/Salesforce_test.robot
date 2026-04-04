@@ -18,6 +18,9 @@ Create Lead via Sales Application
     VerifyText                Lead Owner
     ${lead_owner_name}        GetFieldValue    Lead Owner
     Should Be Equal As Strings                 ${lead_owner_name}    Gaurav Sonkar
+    ClickText                        Save                        partial_match=false
+    VerifyText                       We hit a snag.
+    VerifyText                       Name                        anchor=We hit a snag.
     UseModal                  Off
 
 
