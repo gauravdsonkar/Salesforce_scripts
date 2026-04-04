@@ -17,6 +17,18 @@ ${secret}                       ABFGP3RIPT4KWE7CNMKVF7GOXAX6RWUT
 
 
 *** Keywords *** 
+Open Required Application
+    [Documentation]        This is a script which is used for Opening Salesforce Application
+    [Arguments]            ${App_Name}=Sales
+    GoTo                   ${login_url}
+    TypeText               Username     ${username}  delay=1s
+    TypeText               Password     ${password}  delay=1s
+    ClickText              Log In
+    VerifyTitle            Home | Salesforce          20s
+    ClickElement           /html/body/div[4]/div[1]/section/div[2]/div[1]/one-appnav/div/div/div/div/one-app-launcher-header/button           10s
+    TypeText               Search apps and items...  Sales
+    VerifyText             Sales    anchor=App Launcher                 partial_match=false
+
 Setup Browser
     # Setting search order is not really needed here, but given as an example
     # if you need to use multiple libraries containing keywords with duplicate names
