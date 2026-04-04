@@ -22,7 +22,7 @@ Setup Browser
     # Setting search order is not really needed here, but given as an example
     # if you need to use multiple libraries containing keywords with duplicate names
     Set Library Search Order    QForce                      QWeb
-    OpenBrowser                about:blank                 ${BROWSER}
+    OpenBrowser                 about:blank                 ${BROWSER}
     SetConfig                   LineBreak                   ${EMPTY}                    #\ue000
     Evaluate                    random.seed()               random                      # initialize random generator
     SetConfig                   DefaultTimeout              45s                         #sometimes salesforce is slow
@@ -82,20 +82,22 @@ Home
     VerifyTitle                 Home | Salesforce
 
 Open Required Application
-    [Documentation]        This is a script which is used for Opening Salesforce Application
-    [Arguments]            ${App_Name}
-    GoTo                   ${login_url}
-    TypeText               Username     ${username}  delay=1s
-    TypeText               Password     ${password}  delay=1s
-    ClickText              Log In
-    VerifyTitle            Home | Salesforce          20s
-    #ClickElement           /html/body/div[4]/div[1]/section/div[2]/div[1]/one-appnav/div/div/div/div/one-app-launcher-header/button           10s
-    #TypeText               Search apps and items...  Sales
-    #Click Element          xpath=//b[text()='Sales']  partial_match=false
-    #SetConfig              SearchDirection           down
-    LaunchApp              ${App_Name}
-    VerifyText             ${App_Name}
-    ClickElement           //span[text()/='Sales']                        10s
-    #VerifyText             Sales    anchor=App Launcher    partial_match=false
+    [Documentation]             This is a script which is used for Opening Salesforce Application
+    [Arguments]                 ${App_Name}
+    GoTo                        ${login_url}
+    TypeText                    Username                    ${username}                 delay=1s
+    TypeText                    Password                    ${password}                 delay=1s
+    ClickText                   Log In
+    ${MFA_needed}=              Run Keyword And Return Status                           Should Not Be Equal         ${None}         ${secret}
+    Run Keyword If              ${MFA_needed}               Fill MFA                    ${sf_username}              ${secret}       ${sf_instance_url}
+    VerifyTitle                 Home | Salesforce           20s
+    #ClickElement               /html/body/div[4]/div[1]/section/div[2]/div[1]/one-appnav/div/div/div/div/one-app-launcher-header/button                  10s
+    #TypeText                   Search apps and items...    Sales
+    #Click Element              xpath=//b[text()='Sales']                               partial_match=false
+    #SetConfig                  SearchDirection             down
+    LaunchApp                   ${App_Name}
+    VerifyText                  ${App_Name}
+    ClickElement                //span[text()/='Sales']     10s
+    #VerifyText                 Sales                       anchor=App Launcher         partial_match=false
 
 
