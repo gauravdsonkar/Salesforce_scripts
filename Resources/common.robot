@@ -83,21 +83,21 @@ Home
 
 Open Required Application
     [Documentation]             This is a script which is used for Opening Salesforce Application
-    [Arguments]                 ${App_Name}
+    [Arguments]                 ${App_Name}=
     GoTo                        ${login_url}
     TypeText                    Username                    ${username}                 delay=1s
     TypeText                    Password                    ${password}                 delay=1s
     ClickText                   Log In
     ${MFA_needed}=              Run Keyword And Return Status                           Should Not Be Equal         ${None}         ${secret}
-    Run Keyword If              ${MFA_needed}               Fill MFA                    ${sf_username}              ${secret}       ${sf_instance_url}
+    Run Keyword If              ${MFA_needed}               Fill MFA                    ${username}              ${secret}       ${login_url}
     #VerifyTitle                 Home | Salesforce           20s
     #ClickElement               /html/body/div[4]/div[1]/section/div[2]/div[1]/one-appnav/div/div/div/div/one-app-launcher-header/button                  10s
     #TypeText                   Search apps and items...    Sales
     #Click Element              xpath=//b[text()='Sales']                               partial_match=false
     #SetConfig                  SearchDirection             down
     LaunchApp                   ${App_Name}
-    VerifyText                  ${App_Name}
-    ClickElement                //span[text()/='Sales']     10s
+    VerifyText                  ${App_Name}                 10s
+    #ClickElement                //span[text()/='Sales']     10s
     #VerifyText                 Sales                       anchor=App Launcher         partial_match=false
 
 
