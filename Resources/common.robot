@@ -83,7 +83,7 @@ Home
 
 Open Required Application
     [Documentation]             This is a script which is used for Opening Salesforce Application
-    [Arguments]                 ${App_Name}=
+    [Arguments]                 ${App_Name}
     GoTo                        ${login_url}
     TypeText                    Username                    ${username}                 delay=1s
     TypeText                    Password                    ${password}                 delay=1s
