@@ -12,6 +12,10 @@ Create Lead via Sales Application
     [Tags]                      Lead_creation
     Open Sales Application    Sales
     ClickText                 Leads     partial_match=false
+    ClickText                 New       partial_match=false
+    UseModal                  On
+    VerifyText                Lead Information
+
 
 
 Entering A Lead
