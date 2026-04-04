@@ -11,6 +11,8 @@ Create Lead via Sales Application
     [Documentation]             Create a Lead using Sales App
     [Tags]                      Lead_creation
     Open Sales Application    Sales
+    ClickText                 Leads     partial_match=false
+
 
 Entering A Lead
     [tags]                      Lead
