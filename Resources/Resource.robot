@@ -49,6 +49,7 @@ End suite
     Close All Browsers
 
 
+*** Comments ***
 Login
     [Documentation]             Login to Salesforce instance. Takes instance_url, username and password as
     ...                         arguments. Uses values given in Copado Robotic Testing's variables section by default.
@@ -89,6 +90,7 @@ Fill MFA
     ClickText                   Verify
 
 
+
 Home
     [Documentation]             Example appstarte: Navigate to homepage, login if needed
     GoTo                        ${home_url}
@@ -96,5 +98,6 @@ Home
     Run Keyword If              ${login_status}             Login
     ClickText                   Home
     VerifyTitle                 Home | Salesforce
+
 
 
