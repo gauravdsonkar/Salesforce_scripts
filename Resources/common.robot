@@ -19,8 +19,7 @@ ${secret}                       QVANSQW2EA4ZVOAGNLWKKFNHHM27LUT3
 *** Keywords *** 
 
 Setup Browser
-    # Setting search order is not really needed here, but given as an example
-    # if you need to use multiple libraries containing keywords with duplicate names
+    # Setting search order is used when libraries have same named keywords
     Set Library Search Order    QForce                      QWeb
     OpenBrowser                 about:blank                 ${BROWSER}
     SetConfig                   LineBreak                   ${EMPTY}                    #\ue000
