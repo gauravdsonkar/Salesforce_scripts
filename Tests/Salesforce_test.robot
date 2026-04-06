@@ -43,6 +43,6 @@ Create Lead via Sales Application
     Should Match Regexp         ${title_of_page}            ^Gaurav Sonkar
     Clicktext                   Details
     ${phone_onrecord}           GetFieldValue               Phone
-    Should Match                ${phone_onrecord}           +91${rand_phone} #comparing phone number entered on form with phone number on details page
+    Should Match                ${phone_onrecord}           +91${rand_phone}                           #comparing phone number entered on form with phone number on details page
 
 
