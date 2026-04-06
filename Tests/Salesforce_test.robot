@@ -27,7 +27,6 @@ Create Lead via Sales Application
     TypeText                    First Name                  Gaurav
     TypeText                    Last Name                   Sonkar_${curr_time}                        #add current time to make it unique
     Picklist                    Lead Status                 Open - Not Contacted
-    # generate random phone number, just as an example
     ${rand_phone}=              Generate Random String      10                          [NUMBERS]
     ${phone}=                   SetVariable                 +91${rand_phone}                #generating a random string of numbers of size 10 and setting it as phone
     TypeText                    Phone                       ${phone}                    anchor=First Name
