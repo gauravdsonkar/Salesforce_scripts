@@ -13,7 +13,7 @@ Create Lead via Sales Application
     Open Sales Application      Sales
     ClickText                   Leads                       partial_match=false
     ClickText                   New                         partial_match=false
-    UseModal                    On
+    UseModal                    On                                            #to start interacting with new opened window
     VerifyText                  Lead Information
     VerifyText                  Lead Owner
     ${lead_owner_name}          GetFieldValue               Lead Owner
@@ -40,7 +40,7 @@ Create Lead via Sales Application
     ClickText                   Save                        partial_match=False
     UseModal                    Off
     ${title_of_page}=           Get Title  
-    Should Match Regexp         ${title_of_page}            ^Gaurav Sonkar
+    Should Match Regexp         ${title_of_page}            ^Gaurav Sonkar                             #title of page should start with \"Gaurav Sonkar"
     Clicktext                   Details
     ${phone_onrecord}           GetFieldValue               Phone
     Should Match                ${phone_onrecord}           +91${rand_phone}                           #comparing phone number entered on form with phone number on details page
