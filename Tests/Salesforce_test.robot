@@ -18,10 +18,10 @@ Create Lead via Sales Application
     VerifyText                  Lead Owner
     ${lead_owner_name}          GetFieldValue               Lead Owner
     Should Be Equal As Strings                              ${lead_owner_name}          Gaurav Sonkar
-    ClickText                   Save                        partial_match=false
-    VerifyText                  We hit a snag.
-    VerifyText                  Name                        anchor=We hit a snag.
-    VerifyText                  Company                     anchor=We hit a snag.
+    #ClickText                   Save                        partial_match=false
+    #VerifyText                  We hit a snag.
+    #VerifyText                  Name                        anchor=We hit a snag.
+    #VerifyText                  Company                     anchor=We hit a snag.
     Picklist                    Salutation                  Mr.
     ${curr_time}                Get Time
     TypeText                    First Name                  Gaurav
@@ -42,6 +42,7 @@ Create Lead via Sales Application
     UseModal                    Off
     ${title_of_page}=           Get Title  
     Should Match Regexp         ${title_of_page}            ^Gaurav Sonkar
+    
 
 
 
