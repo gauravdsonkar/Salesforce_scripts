@@ -29,7 +29,7 @@ Create Lead via Sales Application
     Picklist                    Lead Status                 Open - Not Contacted
     # generate random phone number, just as an example
     ${rand_phone}=              Generate Random String      10                          [NUMBERS]
-    ${phone}=                   SetVariable                 +91${rand_phone}                #generating a random string of numbers of size 10
+    ${phone}=                   SetVariable                 +91${rand_phone}                #generating a random string of numbers of size 10 and setting it as phone
     TypeText                    Phone                       ${phone}                    anchor=First Name
     TypeText                    Company                     Company at ${curr_time}                    Last Name
     TypeText                    Title                       Manager                     Address Information
@@ -43,6 +43,6 @@ Create Lead via Sales Application
     Should Match Regexp         ${title_of_page}            ^Gaurav Sonkar
     Clicktext                   Details
     ${phone_onrecord}           GetFieldValue               Phone
-    Should Match                ${phone_onrecord}           +91${rand_phone}
+    Should Match                ${phone_onrecord}           +91${rand_phone} #comparing phone number entered on form with phone number on details page
 
 
