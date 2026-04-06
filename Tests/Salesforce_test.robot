@@ -25,7 +25,7 @@ Create Lead via Sales Application
     Picklist                    Salutation                  Mr.
     ${curr_time}                Get Time
     TypeText                    First Name                  Gaurav
-    TypeText                    Last Name                   Sonkar_${curr_time}
+    TypeText                    Last Name                   Sonkar_${curr_time}                        #add current time to make it unique
     Picklist                    Lead Status                 Open - Not Contacted
     # generate random phone number, just as an example
     ${rand_phone}=              Generate Random String      10                          [NUMBERS]
