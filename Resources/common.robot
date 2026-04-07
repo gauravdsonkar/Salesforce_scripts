@@ -13,9 +13,6 @@ ${login_url}                    https://login.salesforce.com
 ${home_url}                     ${login_url}/lightning/page/home
 
 
-
-
-
 *** Keywords *** 
 
 Setup Browser
@@ -30,8 +27,6 @@ Setup Browser
 
 End suite
     Close All Browsers
-
-
 
 Fill MFA
     [Documentation]             Gets the MFA OTP code and fills the verification dialog (if needed)
